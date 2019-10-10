@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"eu.ensup.master2.medecinpatient.service","l":"MedecinService"}]
