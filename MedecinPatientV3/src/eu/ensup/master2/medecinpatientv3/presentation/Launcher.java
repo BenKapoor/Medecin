@@ -25,7 +25,7 @@ public class Launcher {
 
 		System.out.println(listUnMedecin);
 
-		Patient pat = new Patient(2, "Jeam-Michel", "Patient", "4 rue de la maladie", "Toux", m1);
+		Patient pat = new Patient(2, "Jeam-Michel", "Patient", "41 rue de la maladie", "Toux", m1);
 		Medecin med = new Medecin(2, "Dr", "Alban", "Rue de la pompe", "oui", p1);
 		medecinService.creerMedecin(med);
 	}
