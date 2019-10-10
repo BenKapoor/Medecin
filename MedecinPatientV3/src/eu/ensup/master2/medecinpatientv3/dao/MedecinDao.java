@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import eu.ensup.master2.medecinpatientv3.domaine.Medecin;
 import eu.ensup.master2.medecinpatientv3.domaine.Patient;
 
-public class MedecinDao {
+public class MedecinDao implements IMedecinDao {
 
 	ConnectionDao conn = new ConnectionDao();
 
@@ -14,6 +14,7 @@ public class MedecinDao {
 	 * @param m1
 	 * @param p1
 	 */
+	@Override
 	public void consulter(Medecin m1, Patient p1) {
 		System.out.println("Le patient " + p1.getNom() + " est malade, il sera soigné par " + m1.getNom());
 	}
@@ -21,6 +22,7 @@ public class MedecinDao {
 	/**
 	 * @param m1
 	 */
+	@Override
 	public void creerMedecin(Medecin m1) {
 		try {
 			ConnectionDao.getConnection()
@@ -38,6 +40,7 @@ public class MedecinDao {
 	 * @param id
 	 * @return
 	 */
+	@Override
 	public ArrayList<Medecin> lireMedecin(Medecin m1, int id) {
 		ArrayList<Medecin> ArrayListMedecin = new ArrayList<>();
 		try {
