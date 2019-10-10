@@ -1,0 +1,32 @@
+package eu.ensup.master2.medecinpatientv3.presentation;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import eu.ensup.master2.medecinpatientv3.domaine.Medecin;
+import eu.ensup.master2.medecinpatientv3.domaine.Patient;
+import eu.ensup.master2.medecinpatientv3.service.MedecinService;
+
+public class Launcher {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Medecin m1 = new Medecin();
+		Patient p1 = new Patient();
+
+		MedecinService medecinService = new MedecinService();
+
+		System.out.println("Entrer l'identifiant du médecin : ");
+		Scanner scUnMedecin = new Scanner(System.in);
+		int idUnMedecin = scUnMedecin.nextInt();
+		ArrayList<Medecin> listUnMedecin = new ArrayList<>();
+		listUnMedecin = medecinService.lireMedecin(m1, idUnMedecin);
+
+		System.out.println(listUnMedecin);
+
+		Patient pat = new Patient(2, "Jeam-Michel", "Patient", "4 rue de la maladie", "Toux", m1);
+		Medecin med = new Medecin(2, "Dr", "Alban", "Rue de la pompe", "oui", p1);
+		medecinService.creerMedecin(med);
+	}
+}
