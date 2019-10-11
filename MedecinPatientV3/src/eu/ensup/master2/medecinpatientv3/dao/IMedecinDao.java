@@ -11,5 +11,8 @@ public interface IMedecinDao {
 
 	public void creerMedecin(Medecin m1);
 
-	public ArrayList<Medecin> lireMedecin(Medecin m1, int id);
+	public ArrayList<Medecin> getById(int id);
+
+	public Medecin getMedecinById(int id);
+
 }

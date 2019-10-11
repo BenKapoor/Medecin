@@ -41,7 +41,7 @@ public class MedecinDao implements IMedecinDao {
 	 * @return
 	 */
 	@Override
-	public ArrayList<Medecin> lireMedecin(Medecin m1, int id) {
+	public ArrayList<Medecin> getById(int id) {
 		ArrayList<Medecin> ArrayListMedecin = new ArrayList<>();
 		try {
 
@@ -67,4 +67,30 @@ public class MedecinDao implements IMedecinDao {
 		return ArrayListMedecin;
 	}
 
+	@Override
+	public Medecin getMedecinById(int id) {
+		Medecin medecin = new Medecin();
+		try {
+
+			ResultSet res = ConnectionDao.getConnection()
+					.executeQuery("SELECT id, nom, prenom, adresse, disponibilite FROM medecin WHERE id=" + id);
+
+			while (res.next()) {
+
+				medecin.setId(res.getInt("id"));
+				medecin.setNom(res.getString("nom"));
+				medecin.setPrenom(res.getString("prenom"));
+				medecin.setAdresse(res.getString("adresse"));
+				medecin.setDisponibilite(res.getString("disponibilite"));
+
+			}
+
+		}
+
+		catch (Exception e) {
+			System.out.println(e);
+		}
+
+		return medecin;
+	}
 }

@@ -25,6 +25,18 @@ public class Medecin extends Personne {
 	 * @param prenom
 	 * @param adresse
 	 * @param disponibilite
+	 */
+	public Medecin(int id, String nom, String prenom, String adresse, String disponibilite) {
+		super(id, nom, prenom, adresse);
+		this.disponibilite = disponibilite;
+	}
+
+	/**
+	 * @param id
+	 * @param nom
+	 * @param prenom
+	 * @param adresse
+	 * @param disponibilite
 	 * @param patient
 	 */
 	public Medecin(int id, String nom, String prenom, String adresse, String disponibilite, Patient patient) {

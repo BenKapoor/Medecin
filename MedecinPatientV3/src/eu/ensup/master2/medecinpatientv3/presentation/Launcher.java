@@ -1,8 +1,8 @@
 package eu.ensup.master2.medecinpatientv3.presentation;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
+import eu.ensup.master2.medecinpatientv3.dao.MedecinDao;
 import eu.ensup.master2.medecinpatientv3.domaine.Medecin;
 import eu.ensup.master2.medecinpatientv3.domaine.Patient;
 import eu.ensup.master2.medecinpatientv3.service.MedecinService;
@@ -15,13 +15,18 @@ public class Launcher {
 		Medecin m1 = new Medecin();
 		Patient p1 = new Patient();
 
+		MedecinDao dao = new MedecinDao();
+
+		// > remettre le constructeur dans le service
+		// MedecinService medecinService = new MedecinService(dao);
+
 		MedecinService medecinService = new MedecinService();
 
 		System.out.println("Entrer l'identifiant du médecin : ");
 		Scanner scUnMedecin = new Scanner(System.in);
 		int idUnMedecin = scUnMedecin.nextInt();
-		ArrayList<Medecin> listUnMedecin = new ArrayList<>();
-		listUnMedecin = medecinService.lireMedecin(m1, idUnMedecin);
+		Medecin listUnMedecin = new Medecin();
+		listUnMedecin = medecinService.lireUnMedecin(idUnMedecin);
 
 		System.out.println(listUnMedecin);
 
